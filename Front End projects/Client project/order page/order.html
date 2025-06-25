@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="order.css">
+    <title>Shipments Management</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <h1>All Shipments (25)</h1>
+            <div class="profile">
+                <img src="" alt="">
+                <div class="name" id="name">Moiz Ahmed</div>
+            </div>
+        </nav>
+        <div class="order_container">
+            <div class="filter">
+                <input type="text" id="search" placeholder="Search">
+                <input type="text" id="bookingDate" placeholder="Booking Date">
+                <input type="text" id="pickupDate" placeholder="Pickup Date">
+                <input type="text" id="customFilter" placeholder="Enter Booking Date">
+                <input type="number" id="rowsPerPage" min="1" value="20" placeholder="Rows per page">
+                <select id="Customer">
+                    <option value="all">All Customer</option>
+                    <option value="john_doe">John Doe</option>
+                    <option value="jane_smith">Jane Smith</option>
+                    <option value="alex_wilson">Alex Wilson</option>
+                    <option value="moiz_ahmed">Moiz Ahmed</option>
+                </select>
+                <select name="carriers" id="carriers">
+                    <option value="all">All Carrier</option>
+                    <option value="carrier">Carrier</option>
+                    <option value="express">Express</option>
+                    <option value="standard">Standard</option>
+                </select>
+            </div>
+            <div class="orders">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="s_num">S.NO</th>
+                            <th id="cust">Customer</th>
+                            <th id="user_id">User no</th>
+                            <th id="order_id">Order no</th>
+                            <th id="tracking_no">Tracking NO</th>
+                            <th id="tracking_update">Tracking Update</th>
+                            <th id="action">Action</th>
+                            <!-- <th id="cust">Customer</th>
+                            <th id="cnic">CNIC</th>
+                            <th id="order_id">Order ID</th>
+                            <th id="user_id">User ID</th>
+                            <th id="tracking_no">Tracking No</th>
+                            <th id="bookingDate">Booking Date</th>
+                            <th id="shipment_status">Shipment Status</th>
+                            <th id="payment_status">Payment Status</th>
+                            <th id="action">Action</th>
+                            <th id="amount">Amount</th>
+                            <th id="carrier">Carrier</th>
+                            <th id="delivery">Delivery</th>
+                            <th id="pickup_date">Pick-up Date</th>
+                            <th id="shipper_name">Shipper Name</th>
+                            <th id="receiver_name">Receiver Name</th>
+                            <th id="ship_from">Ship From</th>
+                            <th id="ship_to">Ship To</th>
+                            <th id="zip_code">Zip Code</th>
+                            <th id="total_pcs">Total Pcs</th>
+                            <th id="total_weight">Total Weight</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="orderList">
+                        <!-- Orders will be rendered here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="pagination" class="pagination"></div>
+        </div>
+    </div>
+
+    <script>
+        // Sample data that would normally come from your backend
+        const ordersData = [
+            {
+                _id: "1",
+                customer: "John Doe",
+                order_id: "ORD1001",
+                user_id: "USER101",
+                trackingNo: "TRK1001",
+                shipmentStatus: "pending",
+                
+            }
+        ];
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="order.js"></script>
+</body>
+</html>

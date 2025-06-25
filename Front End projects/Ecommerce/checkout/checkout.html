@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brooks - Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <header class="nav">
+        <div class="logo">
+            <img src="https://www.brooksrunning.com/on/demandware.static/Sites-BrooksRunning-Site/-/default/dw5a0b4b96/images/svg-icons/logo-brooks-running.svg" alt="Brooks Running">
+        </div>
+    </header>
+    
+    <div class="main-content">
+        <div class="checkout-section">
+            <div class="heading">
+                <h1>Checkout</h1>
+                <p>Order subtotal (2 items): $300.00</p>
+            </div>
+            
+            <div class="checkout-steps">
+                <!-- Step 1: Shipping Address -->
+                <div class="step active" data-step="1">
+                    <div class="step-header">
+                        <h2>Shipping address</h2>
+                        <p>Address lookup powered by Google, view Privacy policy. To optout change cookie preferences.</p>
+                        <p><em>*Indicates required field</em></p>
+                    </div>
+
+                    <div class="step-content">
+                        <form class="shipping-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First name *</label>
+                                    <input type="text" id="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last name *</label>
+                                    <input type="text" id="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address1">Address 1 - Street or P.O. Box *</label>
+                                <input type="text" id="address1" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address2">Address 2 - Apt, Suite, Floor</label>
+                                <input type="text" id="address2">
+                                <p class="helper-text">Leave blank if P.O. Box in Address 1</p>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State *</label>
+                                    <select id="state" required>
+                                        <option value="">Select...</option>
+                                        <!-- State options would go here -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">Zip code *</label>
+                                    <input type="text" id="zip" required>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-continue" data-next="2">Continue to shipping method</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Step 2: Shipping Method -->
+                <div class="step" data-step="2">
+                    <div class="step-header">
+                        <h2>Shipping method</h2>
+                    </div>
+                    <div class="step-content">
+                        <div class="shipping-options">
+                            <div class="shipping-option selected">
+                                <label>
+                                    <input type="radio" name="shipping" checked>
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <span class="option-title">Standard Shipping</span>
+                                            <span class="option-price">FREE</span>
+                                        </div>
+                                        <p class="option-desc">Estimated delivery: 3-5 business days</p>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="shipping-option">
+                                <label>
+                                    <input type="radio" name="shipping">
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <span class="option-title">Express Shipping</span>
+                                            <span class="option-price">$12.99</span>
+                                        </div>
+                                        <p class="option-desc">Estimated delivery: 2-3 business days</p>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="shipping-option">
+                                <label>
+                                    <input type="radio" name="shipping">
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <span class="option-title">Next Day Shipping</span>
+                                            <span class="option-price">$24.99</span>
+                                        </div>
+                                        <p class="option-desc">Estimated delivery: 1 business day</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-continue" data-next="3">Continue to payment</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Payment -->
+                <div class="step" data-step="3">
+                    <div class="step-header">
+                        <h2>Payment</h2>
+                    </div>
+                    <div class="step-content">
+                        <div class="payment-tabs">
+                            <div class="tab-header">
+                                <button class="tab-btn active" data-tab="credit">Credit Card</button>
+                                <button class="tab-btn" data-tab="paypal">PayPal</button>
+                                <button class="tab-btn" data-tab="applepay">Apple Pay</button>
+                            </div>
+
+                            <div class="tab-content active" data-tab="credit">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number *</label>
+                                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expDate">Expiration Date *</label>
+                                        <input type="text" id="expDate" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">Security Code *</label>
+                                        <input type="text" id="cvv" placeholder="CVV" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card *</label>
+                                    <input type="text" id="cardName" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="saveCard">
+                                    <label for="saveCard">Save this card for future purchases</label>
+                                </div>
+                            </div>
+
+                            <div class="tab-content" data-tab="paypal">
+                                <p>You'll be redirected to PayPal to complete your purchase securely.</p>
+                                <button type="button" class="paypal-btn">
+                                    <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-medium.png" alt="Check out with PayPal">
+                                </button>
+                            </div>
+
+                            <div class="tab-content" data-tab="applepay">
+                                <p>Complete your purchase quickly and securely with Apple Pay.</p>
+                                <button type="button" class="applepay-btn">
+                                    <img src="https://developer.apple.com/design/human-interface-guidelines/apple-pay/images/ApplePay_Button_Black_WithText_2x.png" alt="Pay with Apple Pay">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="billing-address">
+                            <h3>Billing address</h3>
+                            <div class="form-group">
+                                <input type="checkbox" id="sameAsShipping" checked>
+                                <label for="sameAsShipping">Same as shipping address</label>
+                            </div>
+
+                            <div id="billingAddressFields" style="display: none;">
+                                <!-- Billing address fields would go here -->
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-continue" data-next="4">Review & place order</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Review & place order -->
+                <div class="step" data-step="4">
+                    <div class="step-header">
+                        <h2>Review & place order</h2>
+                    </div>
+                    <div class="step-content">
+                        <div class="review-section">
+                            <div class="review-block">
+                                <h3>Shipping Information</h3>
+                                <p>John Doe<br>
+                                    123 Main St<br>
+                                    Apt 4B<br>
+                                    New York, NY 10001<br>
+                                    United States</p>
+                                <button type="button" class="edit-btn" data-step="1">Edit</button>
+                            </div>
+
+                            <div class="review-block">
+                                <h3>Shipping Method</h3>
+                                <p>Standard Shipping (FREE)<br>
+                                    Estimated delivery: June 10-12, 2023</p>
+                                <button type="button" class="edit-btn" data-step="2">Edit</button>
+                            </div>
+
+                            <div class="review-block">
+                                <h3>Payment Method</h3>
+                                <p>Visa ending in 4242<br>
+                                    Expires 05/25</p>
+                                <button type="button" class="edit-btn" data-step="3">Edit</button>
+                            </div>
+
+                            <div class="review-block">
+                                <h3>Billing Address</h3>
+                                <p>Same as shipping address</p>
+                            </div>
+                        </div>
+
+                        <div class="order-summary">
+                            <h3>Order Summary</h3>
+                            <div class="summary-row">
+                                <span>Subtotal (2 items)</span>
+                                <span>$300.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span>FREE</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Estimated Tax</span>
+                                <span>$0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span>$300.00</span>
+                            </div>
+                        </div>
+
+                        <div class="terms-agreement">
+                            <div class="form-group">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-place-order">Place Order</button>
+
+                        <div class="security-notice">
+                            <img src="https://cdn-icons-png.flaticon.com/512/179/179319.png" alt="Secure lock">
+                            <span>Secure checkout</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <div class="promo-code">
+                <p><strong>Promo code 3 per order maximum</strong></p>
+                <input type="text" placeholder="Enter code">
+            </div>
+
+            <div class="price-summary">
+                <div class="price-row">
+                    <span>Subtotal</span>
+                    <span>$300.00</span>
+                </div>
+                <div class="price-row">
+                    <span>Shipping</span>
+                    <span>FREE</span>
+                </div>
+                <div class="price-row">
+                    <span>Estimated tax</span>
+                    <span>$0</span>
+                </div>
+                <div class="price-row total">
+                    <span>Total</span>
+                    <span>$300.00</span>
+                </div>
+            </div>
+
+            <div class="payment-option">
+                <p>4 Interest-free payments of $75.00 with Name, <a href="#">Learn More</a></p>
+                <p>Or 4 Interest-free payments of $75.00 with <strong>afterpay</strong> → Last Listed</p>
+            </div>
+
+            <div class="cart-items">
+                <h2>Cart (2 Items)</h2>
+
+                <div class="item">
+                    <div class="item-img"></div>
+                    <div class="item-details">
+                        <h2>Short 15</h2>
+                        <p>Merry road-running shoes</p>
+                        <p><strong>Color:</strong> 20° – Black/Blackened</p>
+                        <p><strong>Foot:</strong> White</p>
+                        <p><strong>Size:</strong> 10°</p>
+                        <p><strong>Width:</strong> Medium (10)</p>
+                        <div class="item-price">
+                            <p><strong>$150</strong></p>
+                        </div>
+                        <div class="item-actions">
+                            <div class="quantity-control">
+                                <button class="quantity-btn minus">−</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="99">
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <button class="delete-btn">Remove</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-img"></div>
+                    <div class="item-details">
+                        <h2>Short 15</h2>
+                        <p>Merry road-running shoes</p>
+                        <p><strong>Color:</strong> 25° – Footcard/Bike</p>
+                        <p><strong>Foot:</strong> White</p>
+                        <p><strong>Size:</strong> 15.0</p>
+                        <p><strong>Width:</strong> Medium (10)</p>
+                        <div class="item-price">
+                            <p><strong>$150</strong></p>
+                        </div>
+                        <div class="item-actions">
+                            <div class="quantity-control">
+                                <button class="quantity-btn minus">−</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="99">
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <button class="delete-btn">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="help-section">
+                <h3>Need help?</h3>
+                <a href="#">Visit our Help Center</a>
+                <p>Call us</p>
+                <p>855-427-6657</p>
+                <p>Mon-Fri 6am-5pm PST</p>
+            </div>
+
+            <div class="trial-notice">
+                <p>Take it for a 90-day trial run. If you're not happy, we're not happy.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Your Privacy Choices</a>
+                <a href="#">Accessibility Statement</a>
+                <a href="#">Supply Chain Transparency</a>
+                <a href="#">Fraud Protection</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Sitemap</a>
+                <p>© 2023 Brooks Sports, Inc</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

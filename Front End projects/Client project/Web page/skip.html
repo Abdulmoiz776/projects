@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier Walay</title>
+    <!-- Favicon for most browsers -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+
+    <!-- Apple Touch Icon (for iOS devices) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+
+    <!-- Web Manifest (for PWA support) -->
+    <link rel="manifest" href="{{ url_for('static', filename='images/site.webmanifest') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/web.css')}}"> -->
+    <link rel="stylesheet" href="skip.css">
+</head>
+
+<body>
+    <div class="body-cont">
+        <header>
+            <div class="nav-container">
+                <!-- Logo on the left -->
+                <div class="logo">
+                    <img class="logo-img" src="images/Untitled design.png">
+                    <a href="">
+                        <h2>Courier <span>Walay</span></h2>
+                    </a>
+                            
+                </div>
+                <!-- Hamburger Menu for Mobile -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- Navigation in the center -->
+                <nav id="nav">
+                    <!-- New div for all navigation items -->
+                    <div class="nav-cont  ainer">
+                        <a href="#home">Home</a>
+
+                        <!-- About Us Dropdown -->
+                        <div class="dropdown">
+                            <a href="{{ url_for('routes.aboutus') }}" class="dropbtn">
+                                About Us
+                            </a>
+
+                            <!--
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <h4>Company Information</h4>
+                            <a href="#">Who We Are <button class="arrow-btn">›</button></a>
+                            <a href="#">Our Mission <button class="arrow-btn">›</button></a>
+                            <a href="#">Our Vision <button class="arrow-btn">›</button></a>
+                        </div>
+
+                        <div class="dropdown-column">
+                            <h4>Corporate & Policies</h4>
+                            <a href="#">Privacy Policy <button class="arrow-btn">›</button></a>
+                            <a href="#">Terms & Conditions <button class="arrow-btn">›</button></a>
+                            <a href="#">Sustainability <button class="arrow-btn">›</button></a>
+                        </div>
+
+                        <div class="dropdown-column">
+                            <h4>Careers & Contact</h4>
+                            <a href="#">Join Our Team <button class="arrow-btn">›</button></a>
+                            <a href="#">Press & Media <button class="arrow-btn">›</button></a>
+                            <a href="#">Customer Support <button class="arrow-btn">›</button></a>
+                        </div>
+                    </div>-->
+                        </div>
+
+                        <!-- Services Dropdown -->
+                        <div class="dropdown">
+                            <a href="#services" class="dropbtn">Services <i class="fa-solid fa-caret-down"></i></a>
+                            <div class="dropdown-content">
+                                <div class="dropdown-column">
+                                    <h4>Shipping Services</h4>
+                                    <a href="#">Courier <button class="arrow-btn">›</button></a>
+                                    <a href="#">Freight Solutions <button class="arrow-btn">›</button></a>
+                                    <a href="#">Mail <button class="arrow-btn">›</button></a>
+                                    <a href="#">Air Zone Skipping <button class="arrow-btn">›</button></a>
+                                    <a href="#">Canada to US Shipping <button class="arrow-btn">›</button></a>
+                                    <a href="#">International Shipping <button class="arrow-btn">›</button></a>
+                                    <a href="#">Next Day Delivery <button class="arrow-btn">›</button></a>
+                                    <a href="#">Air Shipping <button class="arrow-btn">›</button></a>
+                                    <a href="#">Skip <button class="arrow-btn">›</button></a>
+                                </div>
+
+                                <div class="dropdown-column">
+                                    <h4>Warehousing & Fulfillment</h4>
+                                    <a href="#">Subscription Box <button class="arrow-btn">›</button></a>
+                                </div>
+
+                                <div class="dropdown-column">
+                                    <h4>Add Ons</h4>
+                                    <a href="#">eCommerce Solutions <button class="arrow-btn">›</button></a>
+                                    <a href="#">Shopify App <button class="arrow-btn">›</button></a>
+                                    <a href="#">Amazon FBM <button class="arrow-btn">›</button></a>
+                                    <a href="#">Amazon FBA <button class="arrow-btn">›</button></a>
+                                    <a href="#">Next Flight Out <button class="arrow-btn">›</button></a>
+                                    <a href="#">White Glove <button class="arrow-btn">›</button></a>
+                                    <a href="#">Walmart Marketplace <button class="arrow-btn">›</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </nav>
+
+                <!-- Buttons on the right -->
+                <!-- Buttons on the right -->
+                <div class="buttons">
+                    <div class="button-1">
+                        <a href="{{ url_for('routes.login') }}">
+
+
+                            <button class="btn">Sign In</button>
+                        </a>
+                    </div>
+                    <div class="button-2">
+                        <a href="{{ url_for('routes.login') }}">
+
+                            <button class="btn2">Track Button</button>
+                        </a>
+                    </div>
+                </div>
+
+        </header>
+        <!-- Sidebar for Mobile -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <!-- Back Button -->
+                <button class="back-btn" id="back-btn">&#8592; Back</button>
+                <button class="btn">
+                    <a href="{{ url_for('routes.login') }}">Sign In</button>
+                <hr class="sidebar-divider">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#home">Home</a>
+                <div class="sidebar-dropdown">
+                    <a href="#aboutus" class="dropbtn">About Us <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <h4>Company Information</h4>
+                            <a href="#">Who We Are <button class="arrow-btn">›</button></a>
+                            <a href="#">Our Mission <button class="arrow-btn">›</button></a>
+                            <a href="#">Our Vision <button class="arrow-btn">›</button></a>
+                        </div>
+
+                        <div class="dropdown-column">
+                            <h4>Corporate & Policies</h4>
+                            <a href="#">Privacy Policy <button class="arrow-btn">›</button></a>
+                            <a href="#">Terms & Conditions <button class="arrow-btn">›</button></a>
+                            <a href="#">Sustainability <button class="arrow-btn">›</button></a>
+                        </div>
+
+                        <div class="dropdown-column">
+                            <h4>Careers & Contact</h4>
+                            <a href="#">Join Our Team <button class="arrow-btn">›</button></a>
+                            <a href="#">Press & Media <button class="arrow-btn">›</button></a>
+                            <a href="#">Customer Support <button class="arrow-btn">›</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-dropdown">
+                    <a href="#services" class="dropbtn">Services <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <h4>Shipping Services</h4>
+                            <a href="#">Courier <button class="arrow-btn">›</button></a>
+                            <a href="#">Freight Solutions <button class="arrow-btn">›</button></a>
+                            <a href="#">Mail <button class="arrow-btn">›</button></a>
+                            <a href="#">Air Zone Skipping <button class="arrow-btn">›</button></a>
+                            <a href="#">Canada to US Shipping <button class="arrow-btn">›</button></a>
+                            <a href="#">International Shipping <button class="arrow-btn">›</button></a>
+                            <a href="#">Next Day Delivery <button class="arrow-btn">›</button></a>
+                            <a href="#">Air Shipping <button class="arrow-btn">›</button></a>
+                            <a href="#">Skip <button class="arrow-btn">›</button></a>
+                        </div>
+
+                        <div class="dropdown-column">
+                            <h4>Warehousing & Fulfillment</h4>
+                            <a href="#">Subscription Box <button class="arrow-btn">›</button></a>
+                            <a href="#">Crowdfunding <button class="arrow-btn">›</button></a>
+                        </div>
+
+                        <div class="dropdown-column">
+                            <h4>Add Ons</h4>
+                            <a href="#">eCommerce Solutions <button class="arrow-btn">›</button></a>
+                            <a href="#">Shopify App <button class="arrow-btn">›</button></a>
+                            <a href="#">Amazon FBM <button class="arrow-btn">›</button></a>
+                            <a href="#">Amazon FBA <button class="arrow-btn">›</button></a>
+                            <a href="#">Next Flight Out <button class="arrow-btn">›</button></a>
+                            <a href="#">White Glove <button class="arrow-btn">›</button></a>
+                            <a href="#">Walmart Marketplace <button class="arrow-btn">›</button></a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact">Contact</a>
+                <!-- Track Button as Anchor -->
+                <a href="#track" class="track-btn">Track Button</a>
+            </nav>
+        </div>
+        <section class="hero">
+            <div class="container">
+                <h1>Experience the <br><span>speed of air shipping,</span><br>for the price of ground</h1>
+                <p>Revolutionize the way you ship across North America with NEXT DAY DELIVERY by courierwalay. With an
+                    exclusive industry-leading carrier network, unparalleled tracking technology and sustainable
+                    delivery
+                    model, you’ll never see shipping the same way again.
+                </p>
+                <a href="#quote" class="cta-button">Get Instant Quote</a>
+            </div>
+            <img src="images/Black Flat Illustrative Logistics Services Logo.jpg" alt="">
+        </section>
+        <!-- <section class="benefit">
+        <div class="container">
+            <h1>Optimized delivery for <span>enterprise efficiency</span></h1>
+            <p>Join the league of top-performing businesses improving their customer experience.</p>
+            <div class="benefit-grid">
+                <div class="benefit-card"></div>
+                <div class="benefit-card"></div>
+                <div class="benefit-card"></div>
+                <div class="benefit-card"></div>
+            </div>
+        </div>
+    </section> -->
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">99.7%</div>
+                    <div class="stat-label">On-Time Delivery Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Customer Support</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Cities Covered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3PM</div>
+                    <div class="stat-label">Cut-off Time</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose Our Next Day Delivery?</h2>
+                <p class="section-subtitle">Premium features designed for your urgent shipping needs</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Guaranteed Delivery</h3>
+                        <p>We promise next business day delivery or your money back - no excuses.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                        <h3>Same Day Pickup</h3>
+                        <p>Book before 3PM and we'll collect your package the same day.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>Real-Time Tracking</h3>
+                        <p>Advanced GPS tracking lets you monitor your shipment's journey.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Secure Handling</h3>
+                        <p>Dedicated handlers and tamper-proof packaging for security.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                        <h3>Priority Support</h3>
+                        <p>24/7 dedicated support team for urgent shipping needs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-money-bill-wave"></i></div>
+                        <h3>Money-Back Guarantee</h3>
+                        <p>Full refund if we miss our delivery window.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">Our Next Day Delivery Process</h2>
+                <p class="section-subtitle">Simple steps to get your urgent packages delivered tomorrow</p>
+
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Book Before Cutoff</h3>
+                        <p>Place your order before 3PM online, via app, or by phone.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Same Day Pickup</h3>
+                        <p>Our courier collects your package the same day.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Priority Processing</h3>
+                        <p>Your shipment receives expedited handling.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Next Day Delivery</h3>
+                        <p>Package delivered by end of next business day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Areas Section -->
+        <section class="service-areas">
+            <div class="container">
+                <h2 class="section-title">Our Next Day Delivery Network</h2>
+                <p class="section-subtitle">Servicing major cities across Pakistan with reliable delivery</p>
+
+                <div class="cities-grid">
+                    <div class="city-card">
+                        <i class="fas fa-city"></i>
+                        <h3>Karachi</h3>
+                        <p>All major areas covered</p>
+                    </div>
+                    <div class="city-card">
+                        <i class="fas fa-city"></i>
+                        <h3>Lahore</h3>
+                        <p>Complete city coverage</p>
+                    </div>
+                    <div class="city-card">
+                        <i class="fas fa-city"></i>
+                        <h3>Islamabad</h3>
+                        <p>Including Rawalpindi</p>
+                    </div>
+                    <div class="city-card">
+                        <i class="fas fa-city"></i>
+                        <h3>Faisalabad</h3>
+                        <p>Full city service</p>
+                    </div>
+                    <div class="city-card">
+                        <i class="fas fa-city"></i>
+                        <h3>Peshawar</h3>
+                        <p>All main areas</p>
+                    </div>
+                    <div class="city-card">
+                        <i class="fas fa-city"></i>
+                        <h3>Multan</h3>
+                        <p>Complete coverage</p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="#" class="cta-button">View All 50+ Cities</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="container">
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">Competitive rates for guaranteed next day delivery</p>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Document Delivery</h3>
+                            <div class="price">Rs. 500 <span>/ shipment</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Up to 500g</li>
+                            <li><i class="fas fa-check"></i> Envelope or small packet</li>
+                            <li><i class="fas fa-check"></i> Next day before 5PM</li>
+                            <li><i class="fas fa-check"></i> Basic tracking</li>
+                        </ul>
+                        <a href="#" class="pricing-button">Choose Plan</a>
+                    </div>
+
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Standard Package</h3>
+                            <div class="price">Rs. 800 <span>/ shipment</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Up to 3kg</li>
+                            <li><i class="fas fa-check"></i> Box dimensions: 45x35x25cm</li>
+                            <li><i class="fas fa-check"></i> Next day before 5PM</li>
+                            <li><i class="fas fa-check"></i> Advanced tracking</li>
+                        </ul>
+                        <a href="#" class="pricing-button">Choose Plan</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Premium Package</h3>
+                            <div class="price">Rs. 1,200 <span>/ shipment</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Up to 5kg</li>
+                            <li><i class="fas fa-check"></i> Box dimensions: 60x40x30cm</li>
+                            <li><i class="fas fa-check"></i> Next day before 12PM</li>
+                            <li><i class="fas fa-check"></i> Premium tracking</li>
+                        </ul>
+                        <a href="#" class="pricing-button">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Trusted by businesses across Pakistan for urgent deliveries</p>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Courier Walay's next day service has been a game-changer for our e-commerce business.
+                                The
+                                reliability is unmatched."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Khan">
+                            <div class="author-info">
+                                <h4>Ahmed Khan</h4>
+                                <p>CEO, ShopPak</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"When we need urgent document delivery, their next day service never disappoints. Worth
+                                every
+                                rupee."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Fatima Ali">
+                            <div class="author-info">
+                                <h4>Fatima Ali</h4>
+                                <p>Legal Consultant</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The tracking system is excellent, and their customer service team is always helpful. Our
+                                go-to for urgent shipments."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Bilal Ahmed">
+                            <div class="author-info">
+                                <h4>Bilal Ahmed</h4>
+                                <p>Operations Manager</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to common questions about our next day service</p>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is the cutoff time for next day delivery?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The cutoff time is 3PM. Orders placed before 3PM will be picked up the same day and
+                                delivered
+                                the next business day.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What areas do you serve for next day delivery?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We serve all major cities across Pakistan including Karachi, Lahore, Islamabad,
+                                Faisalabad,
+                                Peshawar, and more.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What happens if my package isn't delivered on time?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If we miss our delivery window, you'll receive a full refund of your shipping fees as
+                                part of
+                                our money-back guarantee.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What items can I send with next day delivery?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept most non-hazardous items up to 5kg. Restricted items include cash, jewelry, and
+                                illegal goods.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you deliver on weekends and holidays?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our next day service operates on business days only. Packages shipped on Friday will be
+                                delivered Monday.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta">
+            <div class="container">
+                <h2>Ready to Ship With Next Day Delivery?</h2>
+                <p>Experience the fastest, most reliable shipping service in Pakistan</p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button">Get Instant Quote</a>
+                    <a href="#" class="cta-button secondary">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+        <!-- footer -->
+        <footer>
+            <div class="footer-container">
+                <!-- About Courier walay Section -->
+                <div class="footer-section">
+                    <h3>About Courier walay</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Shipping Services</a></li>
+                        <li><a href="#">eCommerce Solutions</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Climate Action</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Courier walay Quicklinks Section -->
+                <div class="footer-section">
+                    <h3>Courier walay Quicklinks</h3>
+                    <ul>
+                        <li><a href="#">Shopify</a></li>
+                        <li><a href="#">Warehousing & Fulfillment</a></li>
+                        <li><a href="#">Amazon FBA</a></li>
+                        <li><a href="#">Our Partners</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">Buying Groups</a></li>
+                        <li><a href="#">Vendors Program</a></li>
+                        <li><a href="#">Referral Program</a></li>
+                        <li><a href="#">Vape Stores Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help & Support Section -->
+                <div class="footer-section">
+                    <h3>Help & Support</h3>
+                    <ul>
+                        <li><a href="#">Common Questions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Claims</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Inquiries</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information Section with Social Media -->
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li><strong>General Inquiries:</strong> <a
+                                href="mailto:info@courierwalay.com">info@courierwalay.com</a></li>
+                        <li><strong>Sales:</strong> <a href="mailto:sales@courierwalay.com">sales@courierwalay.com</a>
+                        </li>
+                        <li><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                    </ul>
+
+                    <!-- Social Media Links -->
+                    <div class="social-links-container">
+                        <h3>Follow Us</h3>
+                        <ul class="social-links">
+                            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shipping Services Note -->
+            <div class="shipping-note">
+                <p>We proudly use <strong>Courier</strong> services anywhere, anytime, with <strong>Courier
+                        walay</strong>
+                    for all
+                    your shipping needs.</p>
+            </div>
+
+            <!-- Copyright Notice -->
+            <div class="copyright">
+                <p>&copy; 2025 Courier walay. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script>document.addEventListener('DOMContentLoaded', function () {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function () {
+                    const faqItem = this.parentElement;
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+
+                    // Toggle active class
+                    faqItem.classList.toggle('active');
+
+                    if (faqItem.classList.contains('active')) {
+                        // Open the answer
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        // Close the answer
+                        answer.style.maxHeight = '0';
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+
+                    
+                    if (faqItem.classList.contains('active')) {
+                        faqQuestions.forEach(otherQuestion => {
+                            if (otherQuestion !== question) {
+                                const otherItem = otherQuestion.parentElement;
+                                const otherAnswer = otherQuestion.nextElementSibling;
+                                const otherIcon = otherQuestion.querySelector('i');
+                                
+                                otherItem.classList.remove('active');
+                                otherAnswer.style.maxHeight = '0';
+                                otherIcon.style.transform = 'rotate(0deg)';
+                            }
+                        });
+                    }
+                    
+                });
+
+                // Initialize all answers as closed
+                const answer = question.nextElementSibling;
+                answer.style.maxHeight = '0';
+            });
+        });
+        
+        </script>
+</body>
+
+</html>

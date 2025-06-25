@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>PAGE</h2>
+        </div>
+        <div class="sidebar-menu">
+            <div class="menu-item active">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Products</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-list"></i>
+                <span>Categories</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-users"></i>
+                <span>Customers</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-truck"></i>
+                <span>Orders</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Analytics</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Content</h1>
+            <div class="user-info">
+                <img src="" alt="admin">
+                <span>Admin</span>
+            </div>
+        </div>
+        <!-- main content file upload section -->
+        <div class="main-container">
+            <h2>Add Products</h2>
+            <div class="product-details">
+                <div class="wrapper">
+                    <div class="add-product">
+                        <div class="product-inputs">
+                            <div class="input-item">
+                                <label for="product-name">Product Name</label>
+                                <input type="text" placeholder="Product Name">
+                            </div>
+                            <div class="input-item">
+                                <label for="gender-category">Category</label>
+                                <select id="gender-category">
+                                    <option value="" disabled selected>Select category</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="unisex">Unisex</option>
+                                </select>
+                            </div>
+
+                            <div class="input-item">
+                                <label for="type">Type</label>
+                                <input type="text" placeholder="Fragrance type">
+                            </div>
+                        </div>
+                        <div class="description-input">
+                            <label for="Description">Description</label>
+                            <textarea name="" id=""></textarea>
+                        </div>
+                    </div>
+                    <div class="dropzone-wrapper">
+                        <!-- Thumbnail Dropzone -->
+                        <div class="dropzone-container">
+                            <label for="thumbnail-file" class="dropzone">
+                                <div class="dropzone-content">
+                                    <svg class="dropzone-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 20 16">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                    </svg>
+                                    <!-- Change this line in your dropzone-content -->
+                                    <p>Click to upload <strong>Your product thumbnails (maximum 2)</strong></p>
+                                    <p class="note">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                </div>
+                                <input id="thumbnail-file" type="file" class="hidden-input" multiple accept="image/*" />
+                            </label>
+
+                        </div>
+
+                        <!-- Product Images Dropzone -->
+                        <div class="dropzone-container">
+                            <label for="product-images-file" class="dropzone">
+                                <div class="dropzone-content">
+                                    <svg class="dropzone-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 20 16">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                    </svg>
+                                    <p>Click to upload <strong>product images</strong></p>
+                                    <p class="note">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                </div>
+                                <input id="product-images-file" type="file" class="hidden-input" multiple
+                                    accept="image/*" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error-message" id="thumbnail-error">Please upload at least 2 thumbnails</div>
+                    <div class="preview-section">
+                        <div class="thumbnail-preview">
+                            <div class="preview-header">
+                                <span class="preview-count" id="thumbnail-count">0 thumbnails selected</span>
+                                <button class="clear-all-btn" id="clear-thumbnail">Clear All</button>
+                            </div>
+                            <div class="preview-container" id="thumbnail-preview">
+                                <!-- Thumbnail preview will be added here dynamically -->
+                            </div>
+
+                        </div>
+                        <div class="varients-preview">
+                            <div class="preview-header">
+                                <span class="preview-count" id="product-images-count">0 varients selected</span>
+                                <button class="clear-all-btn" id="clear-product-images">Clear All</button>
+                            </div>
+                            <div class="preview-container" id="product-images-preview">
+                                <!-- Product images preview will be added here dynamically -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="product-form">
+                    <h1>Price</h1>
+                    <!-- <div class="form-item">
+                        <label for="product-name">Add Product</label>
+                        <input type="text" placeholder="add product">
+                    </div>
+                    <div class="form-item">
+                        <label for="category">Category</label>
+                        <input type="text" placeholder="Category">
+                    </div>
+                    <div class="form-item">
+                        <label for="type">Type</label>
+                        <input type="text" placeholder="product type">
+                    </div> -->
+                    <div class="price-input form-item">
+                        <div class="regular-price">
+                            <label for="price">Price</label>
+                            <input type="text" placeholder="Price">
+                        </div>
+
+                        <div class="discount-price">
+                            <label for="discount-price">Discount Price</label>
+                            <div class="discount-wrapper">
+                                <input type="text" id="discount-price" placeholder="Discount">
+                                <span class="arrow-toggle">&#9660;</span> <!-- ▼ Arrow -->
+                            </div>
+
+                            <!-- Hidden section for start and end date -->
+                            <div class="discount-dates hidden">
+                                <input type="date" placeholder="Start Date">
+                                <input type="date" placeholder="End Date">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tags-section">
+                        <div class="tags-title">Tags:</div>
+
+                        <div class="tags-container">
+                            <div class="tag-input-container">
+                                <input type="text" class="tag-input" placeholder="Add a tag...">
+                                <button class="add-tag-btn">+</button>
+                            </div>
+
+                            <div class="added-tags">
+                                <!-- Tags will be added here dynamically -->
+                            </div>
+                        </div>
+
+                        <button class="publish-btn">Publish Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Menu active state
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.addEventListener('click', function () {
+                    document.querySelectorAll('.menu-item').forEach(i => {
+                        i.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+
+            // Tags functionality
+            const tagInput = document.querySelector('.tag-input');
+            const addTagBtn = document.querySelector('.add-tag-btn');
+            const addedTags = document.querySelector('.added-tags');
+            const publishBtn = document.querySelector('.publish-btn');
+
+            addTagBtn.addEventListener('click', addTag);
+            tagInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') addTag();
+            });
+
+            function addTag() {
+                const tagText = tagInput.value.trim();
+                if (tagText) {
+                    const tagElement = document.createElement('div');
+                    tagElement.className = 'tag-item';
+                    tagElement.innerHTML = `${tagText}<button class="remove-tag">×</button>`;
+                    addedTags.appendChild(tagElement);
+                    tagInput.value = '';
+                    tagElement.querySelector('.remove-tag').addEventListener('click', function () {
+                        tagElement.remove();
+                    });
+                }
+            }
+
+            // Image preview functionality
+            const thumbnailInput = document.getElementById('thumbnail-file');
+            const thumbnailPreview = document.getElementById('thumbnail-preview');
+            const thumbnailCount = document.getElementById('thumbnail-count');
+            const clearThumbnailBtn = document.getElementById('clear-thumbnail');
+            const thumbnailError = document.getElementById('thumbnail-error');
+
+            const productInput = document.getElementById('product-images-file');
+            const productPreview = document.getElementById('product-images-preview');
+            const productCount = document.getElementById('product-images-count');
+            const clearProductBtn = document.getElementById('clear-product-images');
+
+            // Initialize both dropzones
+            setupDropzone(thumbnailInput, thumbnailPreview, thumbnailCount);
+            setupDropzone(productInput, productPreview, productCount);
+
+            function setupDropzone(input, previewContainer, countElement) {
+                // Handle file selection
+                input.addEventListener('change', () => {
+                    if (input.files.length) {
+                        // Special handling for thumbnail dropzone
+                        if (input.id === 'thumbnail-file') {
+                            const existingCount = previewContainer.querySelectorAll('.preview-item').length;
+                            const newFilesCount = input.files.length;
+                            const totalAfterAdd = existingCount + newFilesCount;
+
+                            if (totalAfterAdd > 2) {
+                                alert('You can only upload a maximum of 2 thumbnails');
+                                input.value = ''; // Clear the input
+                                return;
+                            }
+                        }
+
+                        updatePreview(input, previewContainer, countElement);
+                    }
+                });
+            }
+
+            function updatePreview(input, previewContainer, countElement) {
+                // Create a temporary array to hold new files
+                const newFiles = Array.from(input.files);
+
+                // Process each new file
+                newFiles.forEach((file, index) => {
+                    if (!file.type.match('image.*')) return;
+
+                    // Check if this file is already in the preview
+                    const isDuplicate = Array.from(previewContainer.querySelectorAll('.preview-item'))
+                        .some(item => item.dataset.filename === file.name);
+
+                    if (isDuplicate) return; // Skip duplicates
+
+                    // For thumbnails, check if we've reached the limit
+                    if (input.id === 'thumbnail-file' &&
+                        previewContainer.querySelectorAll('.preview-item').length >= 2) {
+                        return;
+                    }
+
+                    const reader = new FileReader();
+
+                    reader.onload = (e) => {
+                        const previewItem = document.createElement('div');
+                        previewItem.className = 'preview-item';
+                        previewItem.dataset.filename = file.name;
+                        previewItem.innerHTML = `
+                    <img src="${e.target.result}" alt="${file.name}">
+                    <span class="preview-filename">${file.name}</span>
+                    <button class="remove-preview">×</button>
+                `;
+                        previewContainer.appendChild(previewItem);
+
+                        // Add remove functionality
+                        previewItem.querySelector('.remove-preview').addEventListener('click', function () {
+                            previewItem.remove();
+                            updateFileInput(input, previewContainer, countElement);
+                        });
+                    };
+
+                    reader.readAsDataURL(file);
+                });
+
+                // Update count display
+                const itemCount = previewContainer.querySelectorAll('.preview-item').length;
+                countElement.textContent = `${itemCount} ${previewContainer.id === 'thumbnail-preview' ? 'thumbnails' : 'varients'} selected`;
+
+                // Hide error message if we have exactly 2 thumbnails
+                if (input.id === 'thumbnail-file') {
+                    thumbnailError.style.display = itemCount === 2 ? 'none' : 'block';
+                }
+            }
+
+            function updateFileInput(input, previewContainer, countElement) {
+                // Get all remaining preview items
+                const previewItems = previewContainer.querySelectorAll('.preview-item');
+
+                // Create new DataTransfer object
+                const dataTransfer = new DataTransfer();
+
+                // Find and add the corresponding files to the input
+                previewItems.forEach(item => {
+                    const filename = item.dataset.filename;
+                    const file = Array.from(input.files).find(f => f.name === filename);
+                    if (file) {
+                        dataTransfer.items.add(file);
+                    }
+                });
+
+                // Update the input files
+                input.files = dataTransfer.files;
+
+                // Update the count display
+                const itemCount = previewItems.length;
+                countElement.textContent = `${itemCount} ${previewContainer.id === 'thumbnail-preview' ? 'thumbnails' : 'varients'} selected`;
+
+                // Update error message visibility for thumbnails
+                if (input.id === 'thumbnail-file') {
+                    thumbnailError.style.display = itemCount === 2 ? 'none' : 'block';
+                }
+            }
+
+            // Clear all buttons functionality
+            clearThumbnailBtn.addEventListener('click', () => {
+                thumbnailInput.value = '';
+                thumbnailPreview.innerHTML = '';
+                thumbnailCount.textContent = '0 thumbnails selected';
+                thumbnailError.style.display = 'block';
+            });
+
+            clearProductBtn.addEventListener('click', () => {
+                productInput.value = '';
+                productPreview.innerHTML = '';
+                productCount.textContent = '0 varients selected';
+            });
+
+            // Publish function with validation
+            publishBtn.addEventListener('click', function () {
+                const tags = Array.from(document.querySelectorAll('.tag-item'))
+                    .map(tag => tag.textContent.replace('×', '').trim());
+
+                const thumbnailFiles = thumbnailInput.files;
+                const productImages = productInput.files;
+
+                // Validate thumbnail count (must be exactly 2)
+                if (thumbnailFiles.length !== 2) {
+                    thumbnailError.style.display = 'block';
+                    alert('Please upload exactly 2 thumbnail images');
+                    return;
+                }
+
+                if (productImages.length === 0) {
+                    alert('Please upload at least one product image');
+                    return;
+                }
+
+                console.log('Publishing with:', {
+                    thumbnails: Array.from(thumbnailFiles),
+                    productImages: Array.from(productImages),
+                    tags: tags
+                });
+
+                alert(`Product published with ${thumbnailFiles.length} thumbnails, ${productImages.length} product images and tags: ${tags.join(', ')}`);
+            });
+
+            // Discount toggle functionality
+            const discountInput = document.getElementById('discount-price');
+            const arrowToggle = document.querySelector('.arrow-toggle');
+            const discountDates = document.querySelector('.discount-dates');
+
+            function toggleDiscountFields() {
+                discountDates.classList.toggle('hidden');
+                // Rotate arrow
+                arrowToggle.innerHTML = discountDates.classList.contains('hidden') ? '&#9660;' : '&#9650;';
+            }
+
+            discountInput.addEventListener('focus', toggleDiscountFields);
+            arrowToggle.addEventListener('click', toggleDiscountFields);
+        });
+    </script>
+</body>
+
+</html>
